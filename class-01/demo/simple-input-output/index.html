@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab 01</title>
+  <!-- Internal CSS Styling -->
+  <style>
+    body {
+      background-color: lightgrey;
+    }
+
+    h1 {
+      background-color: blue;
+      color: white;
+    }
+
+    p {
+      color: red;
+    }
+  </style>
+  <!-- Stylesheet -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+  <header>
+    <h1>Class 1</h1>
+  </header>
+  <main>
+    <p>What is your name?</p>
+    <!-- Inline CSS Styling -->
+    <p style="background-color: magenta; color: aqua">What is your favorite color?</p>
+  </main>
+  <footer></footer>
+  <script>
+    console.log('how are you today?');
+
+    let userResponse = prompt('What is your name?');
+    console.log('user response to Q1: ' + userResponse);
+    alert('Hey ' + userResponse + '! Welcome to my site!');
+
+    let userResponseTwo = prompt('what is your favorite color?');
+    alert('Wow ' + userResponse + ' your favorite color is ' + userResponseTwo + '? Me too!');
+  </script>
+</body>
+</html>
