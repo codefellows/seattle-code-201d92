@@ -1,19 +1,38 @@
 h1 {
-
+  font-family: helvetica;
+  color: aquamarine;
+  background-color: blueviolet;
 }
 
 p {
-
+  color: red;
 }
 
-section p.more-content {
-
+section p.literaly-anything {
+  background-color: darkslateblue;
 }
 
 .more-content {
-
+  color: peachpuff;
+  background-color: azure;
 }
 
 #something-else {
+  background-color: darkolivegreen;
+}
 
+ul.during-class {
+  background-color: yellow;
+}
+
+ul.after-class {
+  background-color: black;
+}
+
+ul.after-class li {
+  color: white;
+}
+
+body main section ol li {
+  color: blue;
 }
