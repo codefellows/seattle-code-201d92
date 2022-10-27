@@ -31,16 +31,33 @@ section {
 
 #static {
   background-color: lightgrey;
+  position: static; /*default*/
 }
 
 #relative {
  background-color: lightpink;
+ /* position: relative;
+ left: 200px;
+ bottom: 100px; */
 }
 
 #absolute {
  background-color: lightcoral;
+ position: absolute;
+ left: 300px;
+}
+
+#absolute:hover {
+  display: none;
 }
 
 #fixed {
  background-color: lightgoldenrodyellow;
+ position: fixed;
+ top: 0px;
+ right: 0px;
+}
+
+#new {
+  background-color: green;
 }
