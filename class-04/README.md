@@ -1,5 +1,13 @@
 # JS Functions, Pair Programming, and Intro to CSS Layout
 
+## Links from Today's Class
+- [Lecture Notes with Pair Programming Instructions](lecture-notes.md)
+- [Code Review Demo Code](inclass-code-review/app.js)
+- [CSS Positioning Demo Code](inclass-demo-positioning/style.css)
+- [CodePen: CSS Positioning Demo](https://codepen.io/reyjroliva/pen/gOKpaaz)
+- [Anatomy of a Function Whiteboard](https://reyoliva373652.invisionapp.com/freehand/Anatomy-of-a-Function-UB6nfNgma?dsid_h=35697c2acc4ce2fccc3087774ca358127d9c68b4169b8adff1b5c173dd74dc78&uid_h=b95583210544a4295593501b546841c264bd8d0e02dd00a2c56517dab88833d4)
+- [Functions REPLIT](https://replit.com/join/nbcekecybc-reynaldooliva)
+
 ## Overview
 
 In this class we will be learning about one of the fundamental building blocks in JavaScript: functions! We will also discuss and demonstrate pair programming, and CSS positioning.
