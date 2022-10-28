@@ -1,5 +1,9 @@
 # CSS for Images, Color, Text & Git Branching
 
+- [Functions Review REPLIT](https://replit.com/@ReynaldoOliva/201d92-Functions-Review#index.js)
+- [CSS Images Demo](inclass-img-demo/)
+- [Git Branching Whiteboard](git-branching-whiteboard.png)
+
 ## Overview
 
 In this class you will be closing out on the "About Me" quiz project. You will have two other lab assignments due that will help you with CSS and learning a new git workflow using branches.
