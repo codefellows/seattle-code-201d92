@@ -1,5 +1,11 @@
 # The DOM, Domain Modeling, and Introduction to Objects
 
+## Today's Links and Examples
+- [Code Review](lab05a-code-review)
+- [Lecture Notes](lecture-notes.md)
+- [Objects REPL](https://replit.com/join/jfsbzjumtl-reynaldooliva)
+- [In Class Demo Code](demo/domain-modeling-and-dom/)
+
 ## Class Outline
 
 - Code review of previous class lab assignment
