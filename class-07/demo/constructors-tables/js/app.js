@@ -1,117 +1,148 @@
 'use strict';
 
-// Constructor Function, a "Factory" for creating Kitten instances.
-function Kitten(name, interests, goodWithDogs, goodWithKids, goodWithCats, imageFilename) {
-  // function name starts with capital letter because it's a constructor function.
-  this.name = name;
-  this.interests = interests;
-  this.isGoodWithDogs = goodWithDogs;
-  this.isGoodWithKids = goodWithKids;
-  this.isGoodWithCats = goodWithCats;
-  this.imageUrl = 'images/' + imageFilename;
-  this.age = this.generateAge();
-}
+// problem domain: the Seattle Kitten Rescue has tons of kittens who need good homes. One of the best ways to reach prospective adoptive homes is to have profiles for each kitten available on a website.
 
-// METHODS
+// ? what are we going to display?
+// Kitten
+// TODO: determine what each kitten's profile should show:
+// * name
+// * random age assigned via a function (3-12 months)
+// * a list of thier interests
+// * are they good with kids
+// * are they good with dogs
+// * are they good with other cats
+// * photo
 
-// methods get added to the constructor's prototype
-Kitten.prototype.generateAge = function () {
-  return randomInRange(3, 12) + ' months';
-}
+// #pragma: GLOBAL VARIABLES + WINDOW INTO DOM
+// FOR LAB CREATE A GLOBAL ARRAY WITH SHOP HOURS
+let shopHours = ['6am', '7am', '...', '8pm'];
 
-Kitten.prototype.meow = function () {
-  console.log('Meow from ' + this.name);
-}
+//**  DOM MANIPULATION STEP 1: WINDOW INTO THE DOM
+// 1st option: document.getElementById ==> method for grabbing tag by its ID
+// 2nd option: doucment.querySelector ==> first instance of the passed in tag, ID, or class in your HTML
+let kittenSection = document.getElementById('kittenProfiles');
 
-Kitten.prototype.render = function () {
+console.dir(kittenSection);
 
-  // get the "container" for kitten profiles
-  const containerElem = document.getElementById('kittenProfiles');
-
-  // each kitten profile is in an article
-  const articleElem = document.createElement('article');
-  containerElem.appendChild(articleElem);
-
-  // add the article heading
-  const headingElem = document.createElement('h2');
-  articleElem.appendChild(headingElem);
-  headingElem.textContent = this.name;
-
-  // add the age/bio
-  const paraElem = document.createElement('p');
-  articleElem.appendChild(paraElem);
-  paraElem.textContent = `${this.name} is adorable and is ${this.age} old.`;
-
-  // add interests in an unordered list
-  const ulElem = document.createElement('ul');
-  articleElem.appendChild(ulElem);
-  for (let i = 0; i < this.interests.length; i++) {
-    const liElem = document.createElement('li');
-    ulElem.appendChild(liElem);
-    liElem.textContent = this.interests[i];
-  }
-
-  // add table of "good withs"
-  const tableElem = document.createElement('table');
-  articleElem.appendChild(tableElem);
-
-  // add header row
-  const headerRow = document.createElement('tr');
-  tableElem.appendChild(headerRow);
-
-  // add header cells
-  const kidsHeaderCell = document.createElement('th');
-  headerRow.appendChild(kidsHeaderCell);
-  kidsHeaderCell.textContent = "Kids";
-
-  const dogsHeaderCell = document.createElement('th');
-  headerRow.appendChild(dogsHeaderCell);
-  dogsHeaderCell.textContent = "Dogs";
-
-  const catsHeaderCell = document.createElement('th');
-  headerRow.appendChild(catsHeaderCell);
-  catsHeaderCell.textContent = "Other Cats";
-
-  // add data row
-  const dataRow = document.createElement('tr');
-  tableElem.appendChild(dataRow);
-
-  // add data cells
-  const kidsDataCell = document.createElement('td');
-  dataRow.appendChild(kidsDataCell);
-  kidsDataCell.textContent = this.isGoodWithKids;
-
-  const dogsDataCell = document.createElement('td');
-  dataRow.appendChild(dogsDataCell);
-  dogsDataCell.textContent = this.isGoodWithDogs;
-
-  const catsDataCell = document.createElement('td');
-  dataRow.appendChild(catsDataCell);
-  catsDataCell.textContent = this.isGoodWithCats;
-
-  // Image
-  const imgElem = document.createElement('img');
-  articleElem.appendChild(imgElem);
-  imgElem.setAttribute('src', this.imageUrl);
-  imgElem.setAttribute('alt', 'picture of ' + this.name);
-}
-
-// Constructed objects can still use standalone functions when needed.
-function randomInRange(min, max) {
+// #pragma: HELPER FUNCTIONS - UTILITIES
+// helper funciton: a function used by another function OR a method to do some processing
+// grabbed from MDN docs
+function randomAge(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// create (aka instantiate) some Kittens
-const frankie = new Kitten('Frankie', ['cuddling', 'chasing string', 'catnip'], true, true, true, 'frankie.jpeg');
-const serena = new Kitten('Serena', ['sitting in laps', 'climbing curtains', 'eating treats'], false, true, false, 'serena.jpeg');
-const jumper = new Kitten('Jumper', ['sunbeams', 'yarn', 'milk', 'paper bags'], false, true, true, 'jumper.jpeg');
+// #pragma: OBJECT LITERALS
 
-// meowing just because we can
-frankie.meow();
-serena.meow();
-jumper.meow();
+let frankie = {
+  name: 'Frankie',
+  age: 0,
+  interests: ['sleeping', 'toys', 'wet food'],
+  isGoodWithKids: true,
+  isGoodWithDogs: true,
+  isGoodWithCats: true,
+  photo: 'images/frankie.jpeg',
+  setAge: function() {
+    this.age = randomAge(3, 12);
+  },
+  render: function() {
+    // ********* DOM MANIPULATION **********
+    // EACH KITTY WILL BE RESPONSIBLE FOR RENDERING ITSELF IN HTML
 
-// get the kittens to show on web page
+    // ** STEP 2: CREATE THE ELEMENT
+    let articleElem = document.createElement('article');
+
+    // ** STEP 3: GIVE CONTEXT IF NECESSARY
+    // skip for articleElem
+
+    // ** STEP 4: ADD IT TO THE DOM ---> parent.appendChild(child)
+    kittenSection.appendChild(articleElem);
+
+    // create h2 element
+    let h2Elem = document.createElement('h2');
+    h2Elem.textContent = this.name;
+    articleElem.appendChild(h2Elem);
+
+    // create p tag
+    let pElem = document.createElement('p');
+    pElem.textContent = `${this.name} is ${this.age} months old`
+    articleElem.appendChild(pElem);
+
+    // *** LINES ---- will be helpful for your lab ***
+    // create unordered list
+    let ulElem = document.createElement('ul');
+    articleElem.appendChild(ulElem);
+
+    // create list items for unordered list
+    for(let i = 0; i < this.interests.length; i++) {
+      let liElem = document.createElement('li');
+      liElem.textContent = this.interests[i];
+      ulElem.appendChild(liElem);
+    }
+
+    // create image
+    let imgElem = document.createElement('img');
+    imgElem.src = this.photo;
+    imgElem.alt = `${this.photo} is an adorable ${this.age} month old kitten`;
+    articleElem.appendChild(imgElem);
+  }
+}
+
+let jumper = {
+  name: 'Jumper',
+  age: 0,
+  interests: ['jumping', 'treats', 'mice'],
+  isGoodWithKids: true,
+  isGoodWithDogs: false,
+  isGoodWithCats: true,
+  photo: 'images/jumper.jpeg',
+  setAge: function() {
+    this.age = randomAge(3, 12);
+  },
+  render: function() {
+    // ********* DOM MANIPULATION **********
+    // EACH KITTY WILL BE RESPONSIBLE FOR RENDERING ITSELF IN HTML
+
+    // ** STEP 2: CREATE THE ELEMENT
+    let articleElem = document.createElement('article');
+
+    // ** STEP 3: GIVE CONTEXT IF NECESSARY
+    // skip for articleElem
+
+    // ** STEP 4: ADD IT TO THE DOM ---> parent.appendChild(child)
+    kittenSection.appendChild(articleElem);
+
+    // create h2 element
+    let h2Elem = document.createElement('h2');
+    h2Elem.textContent = this.name;
+    articleElem.appendChild(h2Elem);
+
+    // create p tag
+    let pElem = document.createElement('p');
+    pElem.textContent = `${this.name} is ${this.age} months old`
+    articleElem.appendChild(pElem);
+
+    // *** LINES ---- will be helpful for your lab ***
+    // create unordered list
+    let ulElem = document.createElement('ul');
+    articleElem.appendChild(ulElem);
+
+    // create list items for unordered list
+    for(let i = 0; i < this.interests.length; i++) {
+      let liElem = document.createElement('li');
+      liElem.textContent = this.interests[i];
+      ulElem.appendChild(liElem);
+    }
+
+    // create image
+    let imgElem = document.createElement('img');
+    imgElem.src = this.photo;
+    imgElem.alt = `${this.photo} is an adorable ${this.age} month old kitten`;
+    articleElem.appendChild(imgElem);
+  }
+}
+
+// #pragma: EXECUTABLE CODE
+frankie.setAge();
 frankie.render();
-serena.render();
+jumper.setAge();
 jumper.render();
