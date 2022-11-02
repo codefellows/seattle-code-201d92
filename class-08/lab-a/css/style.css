@@ -1,0 +1,66 @@
+header {
+  background-color: darkgray;
+
+  margin-bottom: 30px;
+}
+
+nav {
+  height: 90px;
+  width: 960px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+}
+
+nav ul {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main {
+  width: 960px;
+  margin: auto;
+}
+
+main img {
+  margin-bottom: 30px;
+}
+
+main ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+section img {
+  margin-right: 30px;
+}
+
+p {
+  height: 300px;
+  overflow: auto;
+}
+
+button {
+  transition: 2000ms;
+}
+
+button:hover {
+  background-color: green;
+}
+
+
+
