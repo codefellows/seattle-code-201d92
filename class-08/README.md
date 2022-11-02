@@ -1,5 +1,13 @@
 # More Topics in CSS Layouts
 
+## Links from Today's Class
+- [2D Arrays REPL](https://replit.com/join/xegbceexql-reynaldooliva)
+- [Flexbox Demo](inclass-flexbox-demo)
+  - [Yoga Layout Tool](yogalayout.com)
+  - [Flexbox Froggy](https://flexboxfroggy.com/)
+- [Wireframing Demo](lab-a)
+- [Salmon Cookies Image Assets](lab-b/image-assets/)
+
 ## Overview
 
 In this class you will learn to layout a page using CSS and HTML with a given a wireframe. We will also be covering a more advanced CSS layout, Flexbox.
