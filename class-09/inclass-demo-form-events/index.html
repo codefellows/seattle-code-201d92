@@ -9,6 +9,37 @@
     <h1>Events: boxes and forms</h1>
   </header>
   <main>
+    <form id="my-form">
+      <fieldset>
+        <legend>Fieldset Context</legend>
+        <!-- Inputs and Label: 2 options -->
+        <!-- Option 1: elelment are siblings: tether together with for and id -->
+        <label for="firstName">Name</label>
+        <input id="firstName" type="text" name="firstName">
+        <!-- event.target.firstName.value === whatever use input to that field -->
+
+        <!-- Option 2: Label is a parent to Input -->
+        <label>Age
+          <input type="number" name="age" required>
+        </label>
+        <!-- event.target.age.value -->
+
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password">
+
+        <select name="realityTv" id="realityTv">
+          <option value="default">Pick a show</option>
+          <option value="bachelor">Bachelor</option>
+          <option value="selling-sunset">Selling Sunset</option>
+          <option value="bh">Beverly Hills</option>
+          <option value="bling">Bling Empire</option>
+        </select>
+        <!-- event.target.reality-tv.value -->
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+
+
     <section id="container">
       <h3>Click on a box below</h3>
 

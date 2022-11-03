@@ -1,5 +1,10 @@
 # HTML Forms and JS Events
 
+- [FizzBuzz REPL](https://replit.com/join/ujjkjgxxgr-reynaldooliva)
+- [Box Click Event and Form Creation Demo](inclass-demo-form-events/)
+- [Lecture Notes](lecture-notes.md)
+- [Kitty Form Demo](inclass-kitty-demo/)
+
 ## Overview
 
 In this class you will be learn JavaScript Events and how they can bring interactivity to your application. You will also learn how to construct HTML forms.

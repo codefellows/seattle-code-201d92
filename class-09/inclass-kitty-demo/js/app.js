@@ -8,7 +8,7 @@ let kittenCaboodle = [];
 let kittenSection = document.getElementById('kitten-profiles');
 
 // **** FORM/EVENT LISTENER STEP 1: GRAB THE ELEMENT TO LISTEN TO! ******
-
+let myForm = document.getElementById('my-form');
 
 // #pragma: HELPER FUNCTIONS
 
@@ -121,6 +121,32 @@ renderKittens();
 // **** STEP 3: DEFINE OUR CALLBACK *****
 // goal: add new kitten to the caboodle and display on submit
 // ** CALLED ON SUBMIT ACTION
+function handleSubmit(event) {
+  // stop default behavior
+  event.preventDefault();
+
+  // gather basic information from our form
+  let name = event.target.kittenName.value;
+  let photo = event.target.photo.value;
+  let interests = event.target.interest.value;
+  interests = interests.split(',');
+  // 'eating,sleeping,playing' ==> ['eating', 'sleeping', 'playing']
+
+  // gather temperment info from form
+  let isGoodWithDogs = event.target.dogs.checked;
+  let isGoodWithCats = event.target.cats.checked;
+  let isGoodWithKids = event.target.kids.checked;
+
+  // Create a new Kitten using the Kitten constructor
+  let newKitten = new Kitten(name, interests, isGoodWithCats, isGoodWithDogs, isGoodWithKids, photo);
+
+  // render kitten profile onto the screen (add it to the DOM)
+  newKitten.getAge();
+  newKitten.render();
+
+  // clear our form for the next input
+  myForm.reset();
+}
 
 // ****** STEP 2: ATTACH EVENT LISTENER: type of event, and our callback function or event handler ******
-
+myForm.addEventListener('submit', handleSubmit);

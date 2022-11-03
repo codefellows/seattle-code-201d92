@@ -19,6 +19,37 @@
   <main>
 
     <!-- Build form to add kittens -->
+    <form id="my-form">
+      <fieldset>
+        <legend>Basic Info</legend>
+        
+        <label for="kittenName">Kitten Name</label>
+        <input id="kittenName" type="text" name="kittenName">
+
+        <label for="interest">Interests (pleae separate using commas)</label>
+        <input id="interest" type="text" name="interest">
+
+        <label for="photo">Photo</label>
+        <input id="photo" type="text" name="photo">
+      </fieldset>
+      <fieldset>
+        <legend>Temperment</legend>
+
+        <label>Good with Dogs
+          <input type="checkbox" name="dogs">
+        </label>
+
+        <label>Good with Cats
+          <input type="checkbox" name="cats">
+        </label>
+
+        <label>Good with Kids
+          <input type="checkbox" name="kids">
+        </label>
+        <!-- event.target.kids.checked -->
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
 
     <section id="kitten-profiles"></section>
 
