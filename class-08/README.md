@@ -3,7 +3,7 @@
 ## Links from Today's Class
 - [2D Arrays REPL](https://replit.com/join/xegbceexql-reynaldooliva)
 - [Flexbox Demo](inclass-flexbox-demo)
-  - [Yoga Layout Tool](yogalayout.com)
+  - [Yoga Layout Tool](https://yogalayout.com/)
   - [Flexbox Froggy](https://flexboxfroggy.com/)
 - [Wireframing Demo](lab-a)
 - [Salmon Cookies Image Assets](lab-b/image-assets/)
