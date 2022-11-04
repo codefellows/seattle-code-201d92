@@ -1,5 +1,10 @@
 # JS Debugging and More CSS Layout
 
+## Links from Class
+- [Lecture Notes](lecture-notes.md)
+- [Array Methods REPL](https://replit.com/join/maijnnpjkv-reynaldooliva)
+- [Lab10a Assets](lab-a/lab-assets/)
+
 ## Overview
 
 Learning how to **debug** your code will help you to better identify the errors you see in your console, and how to fix them.
