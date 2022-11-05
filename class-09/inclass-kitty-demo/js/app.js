@@ -1,6 +1,6 @@
 'use strict';
 
-// #pragma: GLOBAL VARIABLES
+// #pragma GLOBAL VARIABLES
 
 let kittenCaboodle = [];
 
@@ -10,7 +10,7 @@ let kittenSection = document.getElementById('kitten-profiles');
 // **** FORM/EVENT LISTENER STEP 1: GRAB THE ELEMENT TO LISTEN TO! ******
 let myForm = document.getElementById('my-form');
 
-// #pragma: HELPER FUNCTIONS
+// #pragma HELPER FUNCTIONS
 
 // generate a random number
 // grabbed from MDN docs
@@ -26,7 +26,7 @@ function renderKittens(){
   }
 }
 
-// #pragma: CONSTRUCTORS/OBJECTS
+// #pragma CONSTRUCTORS/OBJECTS
 
 function Kitten(name, interests, isGoodWithCats, isGoodWithDogs, isGoodWithKids, photo){
   this.name = name;
@@ -40,7 +40,7 @@ function Kitten(name, interests, isGoodWithCats, isGoodWithDogs, isGoodWithKids,
   kittenCaboodle.push(this);
 }
 
-// #pragma: PROTOYPE METHODS
+// #pragma PROTOYPE METHODS
 
 Kitten.prototype.getAge = function(){
   this.age = `${randomAge(3,12)} months`;
@@ -106,7 +106,7 @@ Kitten.prototype.render = function(){
 };
 
 
-// #pragma: EXECUTABLES
+// #pragma EXECUTABLES
 
 new Kitten('Frankie',['wet food', 'fish toy', 'cat nip'], true, true, true, 'img/frankie.jpeg');
 new Kitten('Jumper', ['dry food', 'mouse toy', 'treats'], true, false, false, 'img/jumper.jpeg');

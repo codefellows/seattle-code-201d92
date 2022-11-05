@@ -13,7 +13,7 @@
 // * are they good with other cats
 // * photo
 
-// #pragma: GLOBAL VARIABLES + WINDOW INTO DOM
+// #pragma GLOBAL VARIABLES + WINDOW INTO DOM
 // FOR LAB CREATE A GLOBAL ARRAY WITH SHOP HOURS
 let shopHours = ['6am', '7am', '...', '8pm'];
 

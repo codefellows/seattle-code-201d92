@@ -1,0 +1,26 @@
+.grid-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+}
+
+.grid-container div {
+  border: 2px solid black;
+  font-size: 1.5em;
+  padding: 30px;
+}
+
+.grid-item1{
+}
+
+.grid-item2{
+}
+
+.grid-item3{
+}
+
+.grid-item4{
+}
+
+.grid-item5{
+}
