@@ -32,3 +32,27 @@ After choosing your favorite goat 15 times, the voting session will conclude, th
 ### What Do We Need?
 
 #### Globals
+
+- Voting Rounds (15)
+- Storage - Goat Array
+- DOM Window - render images
+- DOM Window - render results strings
+
+#### Constructor - Goat Objects
+
+- Properties
+  - Clicks
+  - Views
+  - Goat Image File Paths
+  - Names
+
+
+#### Executable
+
+- Methods for calculating views and clicks
+- 2 Random Images To Display
+  - Make sure they're unique
+- Render function to get image onto the screen
+- Event Listeners
+  - click - count votes and rerender new images
+  - click - results button ot render a list of calculated data

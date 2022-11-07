@@ -1,5 +1,9 @@
 # Audio/Video, Practical Info, and Getting the Vote Tracker Started
 
+## Today's Links
+- [Grid Demo](grid-demo/)
+- [Goat Picker Demo](inclass-demo/)
+
 ## Overview
 
 This class will be the start of a new project. You will also be learning a new CSS layout with flexbox.
