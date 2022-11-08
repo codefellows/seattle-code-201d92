@@ -16,6 +16,9 @@ let imgTwo = document.getElementById('img-two');
 let resultsBtn = document.getElementById('show-results-btn');
 let resultsContainer = document.getElementById('results-container');
 
+// *** CANVAS DOM REFERENCE (FOR CHART) ***
+let chartContext = document.getElementById('my-chart').getContext('2d');
+
 // #pragma Helper/Utility Functions
 function randomGoat() {
   return Math.floor(Math.random() * goatArray.length);
@@ -45,11 +48,35 @@ function handleShowResults(event) {
   // only display results after 15 rounds
   if (voteCount === 0) {
     // show the results of our voting rounds
+    // *** CHART OBJECT CREATION ***
+    let goatNames = [];
+    let goatViews = [];
+    let goatClicks = [];
+
     for (let i = 0; i < goatArray.length; i++) {
-      let liElem = document.createElement('li'); //<li></li>
-      liElem.textContent = `${goatArray[i].name} was viewed: ${goatArray[i].views} time(s) and clicked: ${goatArray[i].clicks}`; //<li>liElem.textContent</li>
-      resultsContainer.appendChild(liElem);
+      goatNames.push(goatArray[i].name);
+      goatViews.push(goatArray[i].views);
+      goatClicks.push(goatArray[i].clicks);
     }
+
+    let chartConfig = {
+      type: 'bar',
+      data: {
+        labels: goatNames,
+        datasets: [{
+          label: '# of Views',
+          data: goatViews,
+          backgroundColor: 'red',
+        }, {
+          label: '# of Clicks',
+          data: goatClicks,
+          backgroundColor: 'green',
+        }],
+      },
+      options: {},
+    };
+
+    let myChart = new Chart(chartContext, chartConfig);
     // make sure the results can only render once
     resultsBtn.removeEventListener('click', handleShowResults);
   }

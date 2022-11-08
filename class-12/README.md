@@ -1,5 +1,11 @@
 # Adding a chart to the Vote Tracker App
 
+## Today's Links
+
+- [ChartJS Documentation](https://www.chartjs.org/)
+- [chart-demo](chart-demo/)
+- [inclass-demo](inclass-demo/)
+
 ## Overview
 
 In this class you will learn how to utilize a 3rd party library so that you can provide a graphical representation of the click data that is being collected from your vote tracker.
