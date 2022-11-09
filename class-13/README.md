@@ -1,5 +1,10 @@
 # Application State with Local Storage API
 
+## Today's Links
+- [Lecture Notes](lecture-notes.md)
+- [Local Storage Whiteboard](https://reyoliva373652.invisionapp.com/freehand/201d92---Local-Storage--jgR2ryP9E?dsid_h=30648dc28d4d52a98c884ed7de10a2b5786d758e755451225b433884a8b596de&uid_h=b95583210544a4295593501b546841c264bd8d0e02dd00a2c56517dab88833d4)
+- [Goat Demo](inclass-demo/)
+
 ## Overview
 
 In this class you will are going to be introduced the concept of persisting application state with local storage.
